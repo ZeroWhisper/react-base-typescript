@@ -1,3 +1,12 @@
+If your want create a new project like this, just:
+
+```bash
+  yarn global add create-react-app
+  create-react-app.cmd react-typescript --template=typescript
+```
+
+## Default read-me
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

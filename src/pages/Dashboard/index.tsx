@@ -1,17 +1,19 @@
 import React from 'react';
-//import * as Redux from 'react-redux';
+import Backend from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
+// import * as Redux from 'react-redux';
 // import { View, Text } from 'react-native';
+import AppContainer from '~/components/AppContainer';
 
-import { Content, Title } from './style';
+// import Body from './components/Body';
+
+// import { Content } from './style';
 
 const Dashboard: React.FC = (props) => {
   return (
-    <Content>
-      <Title>
-        Dashboard<span> EU SOU UM SPAN </span>
-      </Title>
-      <Title></Title>
-    </Content>
+    <AppContainer>
+      <DndProvider backend={Backend}>{/* <Body /> */}</DndProvider>
+    </AppContainer>
   );
 };
 

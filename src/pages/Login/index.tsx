@@ -1,4 +1,5 @@
 import React, { FormEvent } from 'react';
+import GoogleLogin from 'react-google-login';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
@@ -16,9 +17,13 @@ const Login: React.FC<Props> = (props) => {
 
   return (
     <AppContainer>
-      Login
+      <div>Login</div>
       <form onSubmit={handleInput}>
-        <button>ENVIAR</button>
+        <GoogleLogin
+          clientId="273741619457-i5h186mmqc4dqnn4n60ulneavi5rg7vs.apps.googleusercontent.com"
+          onSuccess={() => {}}
+          onFailure={() => {}}
+        />
       </form>
     </AppContainer>
   );
@@ -44,4 +49,5 @@ const mapStateToProps = (state: ApplicationState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loginRequest: () => dispatch(LoginActions.loginRequest(null)),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
