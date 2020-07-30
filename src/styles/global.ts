@@ -23,10 +23,10 @@ export default createGlobalStyle`
     /* background-color: #eaeaea; */
     /* background-color: #39ff14; */
     /* background-color: #69ff46; */
-    background-color: #AA00FF;
+    /* background-color: #AA00FF; */
     /* background-color: #ff00ff; */
     /* background-color: #F8397E; */
-    /* background-color: #ffa340; */
+    background-color: #ffa340;
     /* background-color: #fb4a21; */
     /* background-color: #fcf133; */
     /* background-color: #ff3a40; */

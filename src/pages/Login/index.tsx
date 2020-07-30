@@ -1,53 +1,79 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 import GoogleLogin from 'react-google-login';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+//import * as Redux from 'react-redux';
 
-import { ApplicationState } from '~/store';
-import LoginActions from '~/store/ducks/login/actions';
 import AppContainer from '~/components/AppContainer';
 
-const Login: React.FC<Props> = (props) => {
-  async function handleInput(e: FormEvent<HTMLFormElement>): Promise<void> {
-    e.preventDefault();
+import { Content, BoxLogin } from './style';
 
-    console.log('EDITANDO');
-    props.loginRequest();
-  }
-
+const Login: React.FC = (props) => {
   return (
     <AppContainer>
-      <div>Login</div>
-      <form onSubmit={handleInput}>
-        <GoogleLogin
-          clientId="273741619457-i5h186mmqc4dqnn4n60ulneavi5rg7vs.apps.googleusercontent.com"
-          onSuccess={() => {}}
-          onFailure={() => {}}
-        />
-      </form>
+      <Content>
+        <BoxLogin>
+          <span>Olá Mundo!</span>
+          <GoogleLogin
+            clientId="273741619457-i5h186mmqc4dqnn4n60ulneavi5rg7vs.apps.googleusercontent.com"
+            onSuccess={() => {}}
+            onFailure={() => {}}
+          />
+        </BoxLogin>
+      </Content>
     </AppContainer>
   );
 };
 
-interface StateProps {}
+export default Login;
+// import React, { FormEvent } from 'react';
+// import GoogleLogin from 'react-google-login';
+// import { connect } from 'react-redux';
+// import { Dispatch } from 'redux';
 
-interface DispatchProps {
-  loginRequest(): void;
-}
+// import { ApplicationState } from '~/store';
+// import LoginActions from '~/store/ducks/login/actions';
+// import AppContainer from '~/components/AppContainer';
 
-interface OwnProps {}
+// const Login: React.FC<Props> = (props) => {
+//   async function handleInput(e: FormEvent<HTMLFormElement>): Promise<void> {
+//     e.preventDefault();
 
-type Props = StateProps & DispatchProps & OwnProps;
+//     console.log('EDITANDO');
+//     props.loginRequest();
+//   }
 
-const mapStateToProps = (state: ApplicationState) => ({
-  login: state.login.data,
-  loading: state.login.loading,
-});
+//   return (
+//     <AppContainer>
+//       <div>Login</div>
+//       <form onSubmit={handleInput}>
+//         <GoogleLogin
+//           clientId="273741619457-i5h186mmqc4dqnn4n60ulneavi5rg7vs.apps.googleusercontent.com"
+//           onSuccess={() => {}}
+//           onFailure={() => {}}
+//         />
+//       </form>
+//     </AppContainer>
+//   );
+// };
 
-// const mapDispatchToProps = (dispatch: Dispatch) =>
-// bindActionCreators({}, dispatch);
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loginRequest: () => dispatch(LoginActions.loginRequest(null)),
-});
+// interface StateProps {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// interface DispatchProps {
+//   loginRequest(): void;
+// }
+
+// interface OwnProps {}
+
+// type Props = StateProps & DispatchProps & OwnProps;
+
+// const mapStateToProps = (state: ApplicationState) => ({
+//   login: state.login.data,
+//   loading: state.login.loading,
+// });
+
+// // const mapDispatchToProps = (dispatch: Dispatch) =>
+// // bindActionCreators({}, dispatch);
+// const mapDispatchToProps = (dispatch: Dispatch) => ({
+//   loginRequest: () => dispatch(LoginActions.loginRequest(null)),
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);
