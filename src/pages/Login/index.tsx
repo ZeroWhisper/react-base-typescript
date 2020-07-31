@@ -1,21 +1,62 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
+import {
+  GoogleLogin,
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+  GoogleLoginProps,
+} from 'react-google-login';
 //import * as Redux from 'react-redux';
 
 import AppContainer from '~/components/AppContainer';
 
 import { Content, BoxLogin } from './style';
 
+const x_google =
+  '297300340076-4cbqnre0to4nihg4p5emqivbtcmsml4t.apps.googleusercontent.com';
+const x_google_cli = '8KJEqAS-9tjyAkD1pSey8lle';
+
+// interface GoogleResponse {
+//   acessToken: string;
+// }
+
+// type GoogleResponse = GoogleLoginResponse | GoogleLoginResponseOffline;
+
 const Login: React.FC = (props) => {
+  const url = 'https://www.googleapis.com/youtube/v3';
+  const [user, setUser] = React.useState<GoogleLoginResponse>(null);
+  const [o, setObj] = React.useState({});
+
+  React.useEffect(() => {
+    const f = async ({ accessToken }: GoogleLoginResponse) => {
+      const result = await fetch(url + '/activities', {
+        method: 'GET',
+        headers: {
+          Autorization: 'Bearer ' + accessToken,
+        },
+      });
+      return result.json();
+    };
+
+    if (user) {
+      const r = f(user);
+      console.log(r);
+    }
+
+    console.log('TENHO', o);
+  }, [user, o]);
+
   return (
     <AppContainer>
       <Content>
         <BoxLogin>
           <span>Olá Mundo!</span>
           <GoogleLogin
-            clientId="273741619457-i5h186mmqc4dqnn4n60ulneavi5rg7vs.apps.googleusercontent.com"
-            onSuccess={() => {}}
-            onFailure={() => {}}
+            clientId={x_google}
+            // onSuccess={() => {}}
+            // onFailure={() => {}}
+            onSuccess={setObj}
+            onFailure={console.log}
+            cookiePolicy={'single_host_origin'}
           />
         </BoxLogin>
       </Content>

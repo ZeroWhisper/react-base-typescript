@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "st": "react-app-rewired start",
+    "st": "react-app-rewired start PORT=80",
     "bld": "react-app-rewired build",
     "start": "react-scripts start",
     "build": "react-scripts build",
