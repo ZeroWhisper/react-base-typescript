@@ -1,70 +1,78 @@
 import React from 'react';
-import {
-  GoogleLogin,
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-  GoogleLoginProps,
-} from 'react-google-login';
-//import * as Redux from 'react-redux';
+import { GoogleLogin, GoogleLoginResponse } from 'react-google-login';
+import * as Redux from 'react-redux';
+// import a from 'gapi-script';
+
+// let auth2 = await loadAuth2(clientId, scopes);
+// let auth2 = await loadAuth2WithProps({ /* object with props from gapi */ });
 
 import AppContainer from '~/components/AppContainer';
 
-import { Content, BoxLogin } from './style';
+import { Content, VideoList, BoxLogin } from './style';
 
-const x_google =
+const clientId =
   '297300340076-4cbqnre0to4nihg4p5emqivbtcmsml4t.apps.googleusercontent.com';
-const x_google_cli = '8KJEqAS-9tjyAkD1pSey8lle';
+const key = '8KJEqAS-9tjyAkD1pSey8lle';
 
-// interface GoogleResponse {
-//   acessToken: string;
-// }
-
-// type GoogleResponse = GoogleLoginResponse | GoogleLoginResponseOffline;
+// let scopes = {};
 
 const Login: React.FC = (props) => {
   const url = 'https://www.googleapis.com/youtube/v3';
-  const [user, setUser] = React.useState<GoogleLoginResponse>(null);
-  const [o, setObj] = React.useState({});
+  const [user, setUser] = React.useState<GoogleLoginResponse>();
 
-  React.useEffect(() => {
-    const f = async ({ accessToken }: GoogleLoginResponse) => {
-      const result = await fetch(url + '/activities', {
-        method: 'GET',
-        headers: {
-          Autorization: 'Bearer ' + accessToken,
-        },
-      });
-      return result.json();
-    };
-
-    if (user) {
-      const r = f(user);
-      console.log(r);
-    }
-
-    console.log('TENHO', o);
-  }, [user, o]);
+  const selector = Redux.useSelector((state) => state);
 
   return (
     <AppContainer>
       <Content>
         <BoxLogin>
-          <span>Olá Mundo!</span>
+          <form onSubmit={() => {}}>
+            <label htmlFor={'buscar-video'}>Buscar</label>
+            <input type={'text'} name={'buscar-video'} />
+
+            <button onClick={() => {}}>ZeroTube</button>
+          </form>
           <GoogleLogin
-            clientId={x_google}
-            // onSuccess={() => {}}
-            // onFailure={() => {}}
-            onSuccess={setObj}
+            clientId={clientId}
+            key={key}
+            onSuccess={(response: GoogleLoginResponse | any): void => {
+              console.log('RESPOSTA', response);
+              setUser(response);
+            }}
             onFailure={console.log}
-            cookiePolicy={'single_host_origin'}
           />
         </BoxLogin>
+        <VideoList></VideoList>
       </Content>
     </AppContainer>
   );
 };
 
 export default Login;
+
+// React.useEffect(() => {
+//   const f = async (user: GoogleLoginResponse) => {
+//     const result = await fetch(url + '/activities', {
+//       headers: {
+//         Authorization: 'Bearer ' + user.accessToken,
+//         key: x_google_cli,
+//       },
+//     });
+//     const r = await result.json();
+
+//     console.log('TESTE?', r);
+
+//     return r;
+//   };
+
+//   if (user) {
+//     const r = f(user);
+//     console.log(r);
+//   }
+
+//   // console.log('TENHO', o);
+// }, [user]);
+
 // import React, { FormEvent } from 'react';
 // import GoogleLogin from 'react-google-login';
 // import { connect } from 'react-redux';

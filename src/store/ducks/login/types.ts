@@ -1,3 +1,5 @@
+import { GoogleLoginProps } from 'react-google-login';
+
 const Types = (name: string): Object => ({
   REQUEST: `${name}/REQUEST`,
   SUCCESS: `${name}/SUCCESS`,
@@ -12,10 +14,10 @@ export enum LoginTypes {
   FAILURE = 'failure',
 }
 
-export interface Login {
-  id: number;
-  name: string;
-}
+// export interface Login {
+//   id: number;
+//   name: string;
+// }
 
 export interface FormData {
   nome: string;
@@ -23,7 +25,7 @@ export interface FormData {
 }
 
 export interface LoginState {
-  readonly data: Login | null;
+  readonly data: GoogleLoginProps | null;
   readonly form: FormData | null;
   readonly loading: boolean;
   readonly error: string | null;
