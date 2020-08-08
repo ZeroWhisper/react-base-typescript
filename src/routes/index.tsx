@@ -13,12 +13,12 @@ import Example from '~/pages/Example';
 const Routes: React.FC = (props) => {
   return (
     <Switch>
-      {/* <Route path={'/'} exact>
+      <Route path={'/'} exact>
         <Dashboard />
-      </Route> */}
-      <Route path={'/'}>
-        <Login />
       </Route>
+      {/* <Route path={'/'}>
+        <Login />
+      </Route> */}
       <Route path={'/game'}>
         <StartGame />
       </Route>
