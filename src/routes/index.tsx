@@ -16,9 +16,9 @@ const Routes: React.FC = (props) => {
       <Route path={'/'} exact>
         <Dashboard />
       </Route>
-      {/* <Route path={'/'}>
+      <Route path={'/login'}>
         <Login />
-      </Route> */}
+      </Route>
       <Route path={'/game'}>
         <StartGame />
       </Route>
