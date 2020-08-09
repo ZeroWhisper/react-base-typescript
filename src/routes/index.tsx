@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Dashboard from '~/pages/Dashboard';
 import Login from '~/pages/Login';
+import LoginJWT from '~/pages/LoginJWT';
 import StartGame from '~/pages/StartGame';
 import Example from '~/pages/Example';
 
@@ -13,11 +14,14 @@ import Example from '~/pages/Example';
 const Routes: React.FC = (props) => {
   return (
     <Switch>
+      <Route exact path={'/'}>
+        <Login />
+      </Route>
       <Route path={'/dashboard'} exact>
         <Dashboard />
       </Route>
-      <Route path={'/'}>
-        <Login />
+      <Route path={'/login'}>
+        <LoginJWT />
       </Route>
       <Route path={'/game'}>
         <StartGame />
