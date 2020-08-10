@@ -1,34 +1,62 @@
-import { useReducer } from 'react';
+// import React, { useReducer } from 'react';
 
-interface StateReducer {
+export interface StateReducer {
   counter: integer;
   clicks: integer;
 }
 
-interface DispatchAction<T> {
+interface Action {
   type: string;
+}
+
+interface DispatchAction<T> extends Action {
   payload: T;
 }
 
-const reducer = <T>(state: StateReducer, action: DispatchAction<T | any>) => {
+export const stateInitial: StateReducer = {
+  counter: 0,
+  clicks: 0,
+};
+
+const reducer = <T>(
+  state: StateReducer = stateInitial,
+  action: DispatchAction<T>,
+) => {
   switch (action.type) {
     case 'plus':
-      return state;
+      return { ...state, counter: state.counter + 1, clicks: state.clicks + 1 };
+    case 'minus':
+      return { ...state, counter: state.counter - 1, clicks: state.clicks + 1 };
     default:
       return state;
   }
 };
 
-const initialValue = {
-  counter: 0,
-  clicks: 0,
+const actions = {
+  plusAction: <T>(payload?: T | undefined): DispatchAction<T | undefined> => {
+    return {
+      type: 'plus',
+      payload,
+    };
+  },
+
+  minusAction: <T>(payload?: T | undefined): DispatchAction<T | undefined> => {
+    return {
+      type: 'minus',
+      payload,
+    };
+  },
 };
 
-function App() {
-  const re = useReducer(reducer, initialValue);
-}
+export { reducer, actions };
 
-export { reducer };
+// function App() {
+//   const re = useReducer(reducer, initialValue);
+// }
+
+// const [state, dispatch] = useReducer(reducer, {});
+
+// export [state, dispatch];
 
 // const reducer = useReducer(reducer, ) {
 
