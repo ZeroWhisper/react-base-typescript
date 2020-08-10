@@ -1,5 +1,3 @@
-// import React, { useReducer } from 'react';
-
 export interface StateReducer {
   counter: integer;
   clicks: integer;
