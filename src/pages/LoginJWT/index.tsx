@@ -5,11 +5,6 @@ import { reducer, actions, stateInitial as initial } from '~/store_react';
 import { Content, CenterBox, LoginButton } from './style';
 
 const LoginJWT: React.FC = () => {
-  // const [state, dispatch] = React.useReducer<StateReducer, StateReducer>(
-  //   reducer,
-  //   stateInitial,
-  // );
-
   const [state, dispatch] = React.useReducer(reducer, initial);
 
   function handlePlus() {

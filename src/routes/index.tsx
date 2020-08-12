@@ -8,6 +8,7 @@ import Login from '~/pages/Login';
 import LoginJWT from '~/pages/LoginJWT';
 import StartGame from '~/pages/StartGame';
 import Example from '~/pages/Example';
+import ClickExample from '~/pages/ClickExample';
 
 // import styles from './style';
 
@@ -28,6 +29,9 @@ const Routes: React.FC = (props) => {
       </Route>
       <Route path={'/example'}>
         <Example />
+      </Route>
+      <Route path={'/click'}>
+        <ClickExample />
       </Route>
     </Switch>
   );
