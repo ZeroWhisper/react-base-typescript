@@ -9,6 +9,14 @@ export default createGlobalStyle`
   }
 
   #root {
+    height: 100vh;
+    width: 100%;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px;
+    /* align-items: center; */
+    display: flex;
+    /* flex: 1; */
     /* max-width: 960px; */
     /* margin: 0 auto; */
     /* padding: 40px 20px; */
@@ -23,18 +31,18 @@ export default createGlobalStyle`
     /* background-color: #eaeaea; */
     /* background-color: #39ff14; */
     /* background-color: #69ff46; */
-    /* background-color: #AA00FF; */
+    background-color: #AA00FF;
     /* background-color: #ff00ff; */
     /* background-color: #F8397E; */
-    background-color: #ffa340;
+    /* background-color: #ffa340; */
     /* background-color: #fb4a21; */
     /* background-color: #fcf133; */
     /* background-color: #ff3a40; */
     -webkit-font-smoothing: antialiased;
-    /* display: flex; */
+    display: flex;
     /* flex: 1; */
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100vh; */
   }
 
   button {
@@ -45,6 +53,8 @@ export default createGlobalStyle`
     display: flex;
   } */
 
-
+  /* body, input, button, textarea {
+    font: 500 1.6 Poppins;
+  } */
 
 `;

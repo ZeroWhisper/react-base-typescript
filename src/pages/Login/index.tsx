@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleLogin, GoogleLoginResponse } from 'react-google-login';
-import * as Redux from 'react-redux';
+// import * as Redux from 'react-redux';
 // import a from 'gapi-script';
 
 // let auth2 = await loadAuth2(clientId, scopes);
@@ -17,16 +17,16 @@ const key = '8KJEqAS-9tjyAkD1pSey8lle';
 // let scopes = {};
 
 const Login: React.FC = (props) => {
-  const url = 'https://www.googleapis.com/youtube/v3';
+  // const url = 'https://www.googleapis.com/youtube/v3';
   const [user, setUser] = React.useState<GoogleLoginResponse>();
 
-  const selector = Redux.useSelector((state) => state);
+  // const selector = Redux.useSelector((state) => state);
 
   return (
     <AppContainer>
       <Content>
         <BoxLogin>
-          <form onSubmit={() => {}}>
+          <form onSubmit={() => user}>
             <label htmlFor={'buscar-video'}>Buscar</label>
             <input type={'text'} name={'buscar-video'} />
 
