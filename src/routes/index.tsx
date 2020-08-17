@@ -10,17 +10,18 @@ import LoginJWT from '~/pages/LoginJWT';
 import StartGame from '~/pages/StartGame';
 import Example from '~/pages/Example';
 import ClickExample from '~/pages/ClickExample';
+import YTFake from '~/pages/YTFake';
 
 // import styles from './style';
 
 const Routes: React.FC = (props) => {
   return (
     <Switch>
+      <Route exact path={'/'}>
+        <Rocketseat />
+      </Route>
       <Route path={'/dashboard'} exact>
         <Dashboard />
-      </Route>
-      <Route path={'/'}>
-        <Rocketseat />
       </Route>
       {/* <Route path={'/login'}>
         <Login />
@@ -36,6 +37,9 @@ const Routes: React.FC = (props) => {
       </Route>
       <Route path={'/click'}>
         <ClickExample />
+      </Route>
+      <Route path={'/ytfake'}>
+        <YTFake />
       </Route>
     </Switch>
   );

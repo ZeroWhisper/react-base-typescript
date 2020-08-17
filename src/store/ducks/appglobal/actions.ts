@@ -1,8 +1,7 @@
 import { Action } from 'redux';
 import { APP_TYPES } from '../types';
 
-export interface ActionsTypes<T> {
-  type: string;
+export interface ActionsTypes<T> extends Action {
   payload?: T | any;
 }
 

@@ -1,4 +1,6 @@
-interface DefaultTypes {
+// import { Action } from 'redux';
+
+export interface DefaultTypes {
   REQUEST: string;
   SUCCESS: string;
   FAILURE: string;

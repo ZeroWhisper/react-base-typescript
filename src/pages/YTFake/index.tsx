@@ -1,12 +1,19 @@
 import React from 'react';
-//import * as Redux from 'react-redux';
-// import { View, Text } from 'react-native';
 
-// import styles from './style';
+import Search from './components/Search';
+import Body from './components/Body';
+
+import { Content, Board } from './style';
 
 const YTFake: React.FC = (props) => {
-  // return (<View><Text>Olá Mundo!</Text></View>);
-  return <div>Olá Mundo!</div>;
+  return (
+    <Content>
+      <Board>
+        <Search />
+        <Body />
+      </Board>
+    </Content>
+  );
 };
 
 export default YTFake;
