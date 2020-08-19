@@ -9,14 +9,14 @@ export default createGlobalStyle`
   }
 
   #root {
-    height: 100vh;
-    width: 100%;
-    border: 1px solid red;
+    /* height: 100vh; */
+    /* width: 100%; */
+    /* border: 1px solid red;
     padding: 10px;
-    margin: 10px;
+    margin: 10px; */
     /* align-items: center; */
     display: flex;
-    /* flex: 1; */
+    flex: 1;
     /* max-width: 960px; */
     /* margin: 0 auto; */
     /* padding: 40px 20px; */
