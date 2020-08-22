@@ -1,22 +1,11 @@
-import { compose, createStore, applyMiddleware, Store } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import { LoginState } from './ducks/login/types';
+import createStore from './createStore';
+import rootReducer from './modules/rootReducer';
+import rootSaga from './modules/rootSaga';
 
-import reducers, { rootSaga } from './ducks';
+const store = createStore(rootReducer, []);
 
-export interface ApplicationState {
-  login: LoginState;
-}
+createSagaMiddleware;
 
-const sagaMiddleware = createSagaMiddleware();
-
-const store: Store<ApplicationState> = createStore(
-  reducers,
-  {},
-  compose(applyMiddleware(sagaMiddleware)),
-);
-
-sagaMiddleware.run(rootSaga);
-
-export default store;
+export { store };
