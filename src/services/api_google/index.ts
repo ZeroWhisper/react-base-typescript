@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const key = '8KJEqAS-9tjyAkD1pSey8lle';
-const key = 'AIzaSyAyb31QZGudVuJ98hf52WS3ZMhBsCpgzQ0';
+const key = '';
 
 const baseURL = 'https://www.googleapis.com/youtube/v3';
 
