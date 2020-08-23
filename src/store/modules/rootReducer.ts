@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import ytfake from './ytfake/reducer';
+// import appGlobal from './appglobal/reducer';
+import yt from './yt/reducer';
 
 export default combineReducers({
-  ytfake,
+  yt,
+  // appGlobal,
 });

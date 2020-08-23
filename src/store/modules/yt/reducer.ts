@@ -1,17 +1,19 @@
-import { State, Action, Type } from './types';
+import * as YTTypes from './types';
 
-const INITIAL: State = {
+const INITIAL: YTTypes.YTState = {
   loading: false,
-  failure: false,
+  error: '',
 };
 
-const reducer = (state = INITIAL, action: Action): State => {
+const reducer = (
+  state = INITIAL,
+  action: YTTypes.YTActions,
+): YTTypes.YTState => {
   switch (action.type) {
-    case Type.SET:
+    case YTTypes.Types.SET:
       const { key, value } = action.payload;
       return { ...state, form: { ...state.form, [key]: value } };
-    case Type.REQUEST:
-      // action.payload.name;
+    case YTTypes.Types.REQUEST:
       return state;
     default:
       return state;

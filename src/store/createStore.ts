@@ -1,18 +1,15 @@
 import { Reducer, Middleware, createStore, applyMiddleware } from 'redux';
 
-import {
-  Action as YTFakeActions,
-  State as YTFakeStore,
-} from './modules/ytfake/types';
+import { YTActions, YTState } from './modules/yt/types';
 
-export interface AppState {
-  ytfake: YTFakeStore;
+export interface StoreApp {
+  yt: YTState;
 }
 
-export type StoreAction = YTFakeActions;
+export type StoreAction = YTActions;
 
 export default (
-  reducers: Reducer<AppState, StoreAction>,
+  reducers: Reducer<StoreApp, StoreAction>,
   middlewares: Middleware[],
 ) => {
   const enhancer = applyMiddleware(...middlewares);

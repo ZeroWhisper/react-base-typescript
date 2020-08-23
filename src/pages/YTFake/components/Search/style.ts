@@ -13,6 +13,7 @@ export const Content = styled.form`
     display: flex;
     flex: 1;
     flex-direction: row;
+    align-items: center;
 
     padding: 10px 20px;
     border: 1px solid white;

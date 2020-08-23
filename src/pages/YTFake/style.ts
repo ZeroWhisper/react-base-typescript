@@ -8,6 +8,6 @@ export const Content = styled.div`
 `;
 
 export const Board = styled.div`
-  min-width: 920px;
-  border: 1px solid gold;
+  min-width: 350px;
+  /* border: 1px solid gold; */
 `;
