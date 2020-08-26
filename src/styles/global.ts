@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -8,19 +8,27 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  #root {
-    /* height: 100vh; */
-    /* width: 100%; */
-    /* border: 1px solid red;
-    padding: 10px;
-    margin: 10px; */
-    /* align-items: center; */
-    display: flex;
-    flex: 1;
-    /* max-width: 960px; */
-    /* margin: 0 auto; */
-    /* padding: 40px 20px; */
+  html, body, #root {
+    ${css`
+      height: 100%;
+      /* border: 10px solid red; */
+    `}
   }
+
+  /*
+  #root {
+    ${
+      process.env.HEIGHT_PAGE === 'static'
+        ? css`
+            height: 100%;
+          `
+        : css`
+            display: flex;
+            flex: 1;
+          `
+    }
+  }
+  */
 
   body, input, button {
     font-size: 16px;
@@ -28,10 +36,10 @@ export default createGlobalStyle`
   }
 
   body {
-    /* background-color: #eaeaea; */
+    background-color: #eaeaea;
     /* background-color: #39ff14; */
     /* background-color: #69ff46; */
-    background-color: #AA00FF;
+    /* background-color: #AA00FF; */
     /* background-color: #ff00ff; */
     /* background-color: #F8397E; */
     /* background-color: #ffa340; */
@@ -39,7 +47,7 @@ export default createGlobalStyle`
     /* background-color: #fcf133; */
     /* background-color: #ff3a40; */
     -webkit-font-smoothing: antialiased;
-    display: flex;
+    /* display: flex; */
     /* flex: 1; */
     /* width: 100%; */
     /* height: 100vh; */
@@ -49,12 +57,8 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  /* body * {
-    display: flex;
-  } */
-
-  /* body, input, button, textarea {
-    font: 500 1.6 Poppins;
-  } */
+  ul {
+    list-style: none;
+  }
 
 `;
