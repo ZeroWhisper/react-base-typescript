@@ -1,5 +1,8 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+import colors from './colors';
+import fonts from './fonts';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -32,11 +35,20 @@ export default createGlobalStyle`
 
   body, input, button {
     font-size: 16px;
-    font-family: Roboto, Helvetica, sans-serif
+    font-family: ${fonts.general}, Roboto, Helvetica, sans-serif;
+    /* letter-spacing: 2.5px; */
+    font-weight: 100;
   }
 
   body {
-    background-color: #eaeaea;
+    /* Geek */
+    /* background-color: #181A1B; */
+    background-color: ${colors.background.weak};
+    color: ${colors.fonts.primary};
+
+    /* background-color: #eaeaea; */
+    /* background-color: #07A98A; */
+
     /* background-color: #39ff14; */
     /* background-color: #69ff46; */
     /* background-color: #AA00FF; */
