@@ -6,6 +6,10 @@ export default {
   background: {
     might: 'rgb(24, 26, 27)',
     weak: 'rgb(32, 35, 36)',
+    // https://www.w3schools.com/css/css3_gradients.asp
+    primary_gradient:
+      'linear-gradient(0deg, hsl(215, 60%, 65%), hsl(192, 64%, 60%))',
+    seconday_gradient: 'linear-gradient(to bottom right, red, yellow)',
   },
   border: {
     week: '#eaeaea',
