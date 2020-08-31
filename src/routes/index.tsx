@@ -5,12 +5,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Dashboard from '~/pages/Dashboard';
 import Rocketseat from '~/pages/Rocketseat';
-// import Login from '~/pages/Login';
+import DND from '~/pages/DND';
 import LoginJWT from '~/pages/LoginJWT';
 import StartGame from '~/pages/StartGame';
 import Example from '~/pages/Example';
 import ClickExample from '~/pages/ClickExample';
 import YTFake from '~/pages/YTFake';
+import Trello from '~/pages/Trello';
+import GeekDashboard from '~/pages/GeekDashboard';
 
 // import styles from './style';
 
@@ -20,12 +22,18 @@ const Routes: React.FC = (props) => {
       <Route exact path={'/'}>
         <Rocketseat />
       </Route>
+      <Route path={'/geek'}>
+        <GeekDashboard />
+      </Route>
+      <Route path={'/dnd'}>
+        <DND />
+      </Route>
       <Route path={'/dashboard'} exact>
         <Dashboard />
       </Route>
-      {/* <Route path={'/login'}>
-        <Login />
-      </Route> */}
+      <Route path={'/trello'}>
+        <Trello />
+      </Route>
       <Route path={'/login'}>
         <LoginJWT />
       </Route>
