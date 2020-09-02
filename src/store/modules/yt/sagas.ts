@@ -5,11 +5,11 @@ import * as ActionsYT from './actions';
 import * as YTTypes from './types';
 
 import api_google from '~/services/api_google';
-import { StoreApp } from '~/store/createStore';
+import { RootState } from '~/store/modules/rootReducer';
 
 export function* request(action?: ActionType<YTTypes.YTActions>) {
   try {
-    const { busca } = yield select((state: StoreApp) => state.yt.form);
+    const { busca } = yield select((state: RootState) => state.yt.form);
 
     const response = yield call(api_google.get, '/search', {
       params: {

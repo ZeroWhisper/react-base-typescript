@@ -1,15 +1,15 @@
 import { Reducer, Middleware, createStore, applyMiddleware } from 'redux';
+// import { ActionType } from 'typesafe-actions';
 
-import { YTActions, YTState } from './modules/yt/types';
+import { YTActions } from './modules/yt/types';
+import { GeekActions } from './modules/geek/types';
 
-export interface StoreApp {
-  yt: YTState;
-}
+import { RootState } from './modules/rootReducer';
 
-export type StoreAction = YTActions;
+export type StoreAction = YTActions & GeekActions;
 
 export default (
-  reducers: Reducer<StoreApp, StoreAction>,
+  reducers: Reducer<RootState, StoreAction>,
   middlewares: Middleware[],
 ) => {
   const enhancer = applyMiddleware(...middlewares);
