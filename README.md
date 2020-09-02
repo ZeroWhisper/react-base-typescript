@@ -5,6 +5,11 @@ If your want create a new project like this, just:
   create-react-app.cmd react-typescript --template=typescript
 ```
 
+NextJS. USE-IT!!
+https://github.com/vercel/next.js/tree/canary/examples
+
+---
+
 ## Default read-me
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
