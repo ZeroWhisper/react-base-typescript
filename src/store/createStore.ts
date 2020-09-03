@@ -1,5 +1,4 @@
 import { Reducer, Middleware, createStore, applyMiddleware } from 'redux';
-// import { ActionType } from 'typesafe-actions';
 
 import { YTActions } from './modules/yt/types';
 import { GeekActions } from './modules/geek/types';
