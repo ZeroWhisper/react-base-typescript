@@ -1,6 +1,7 @@
+// https://prettier.io/docs/en/options.html
 module.exports = {
   bracketSpacing: true,
-  jsxBracketSameLine: true,
+  jsxBracketSameLine: false,
   singleQuote: true,
   trailingComma: 'all',
   arrowParens: 'avoid',

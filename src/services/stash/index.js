@@ -11,9 +11,3 @@ export const unstash = v => {
   const level_one = lz.decompress(level_two);
   return JSON.parse(level_one);
 };
-
-// const c = lz.compress(JSON.stringify(firebaseConfig));
-
-// console.log('Compress', c);
-
-// const d = JSON.parse(lz.decompress(c));
