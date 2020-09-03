@@ -3,9 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 //import * as Redux from 'react-redux';
 // import { View, Text } from 'react-native';
 
-import Dashboard from '~/pages/Dashboard';
 import Rocketseat from '~/pages/Rocketseat';
-import DND from '~/pages/DND';
 import LoginJWT from '~/pages/LoginJWT';
 import StartGame from '~/pages/StartGame';
 import Example from '~/pages/Example';
@@ -16,7 +14,7 @@ import GeekDashboard from '~/pages/GeekDashboard';
 
 // import styles from './style';
 
-const Routes: React.FC = (props) => {
+const Routes: React.FC = props => {
   return (
     <Switch>
       <Route exact path={'/'}>
@@ -24,12 +22,6 @@ const Routes: React.FC = (props) => {
       </Route>
       <Route path={'/geek'}>
         <GeekDashboard />
-      </Route>
-      <Route path={'/dnd'}>
-        <DND />
-      </Route>
-      <Route path={'/dashboard'} exact>
-        <Dashboard />
       </Route>
       <Route path={'/trello'}>
         <Trello />
